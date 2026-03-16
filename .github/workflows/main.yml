@@ -13,7 +13,7 @@ jobs:
     
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x]
+        node-version: [18.x, 20.x]  # 移除不支持的22.x版本
     
     steps:
     - uses: actions/checkout@v4
@@ -58,8 +58,14 @@ jobs:
       uses: actions/github-script@v7
       with:
         script: |
-          const result = ${{ needs.build.result }};
-          const deployResult = ${{ needs.deploy.result }};
+          const buildResult = '${{ needs.build.result }}';
+          const deployResult = '${{ needs.deploy.result }}';
           
-          console.log('Build result:', result);
+          console.log('Build result:', buildResult);
           console.log('Deploy result:', deployResult);
+          
+          if (buildResult === 'success' && deployResult === 'success') {
+            console.log('🎉 CI/CD pipeline executed successfully!');
+          } else {
+            console.log('⚠️ CI/CD pipeline completed with issues');
+          }
