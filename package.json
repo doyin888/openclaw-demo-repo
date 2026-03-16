@@ -5,9 +5,10 @@
   "description": "OpenClaw GitHub技能演示仓库",
   "main": "index.js",
   "scripts": {
-    "build": "echo 'Building project...'; mkdir -p build && cp -r src/* build/ || true",
+    "build": "mkdir -p build && copy src\\index.html build\\index.html",
     "test": "echo 'Testing project...'; exit 0",
-    "clean": "rm -rf build"
+    "clean": "rmdir /s /q build",
+    "dev": "echo 'Development server would start here'; exit 0"
   },
   "keywords": ["openclaw", "demo", "github"],
   "author": "doyin888",
