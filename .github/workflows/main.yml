@@ -14,11 +14,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Use Node.js 18
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'npm'
+    - name: Install Node.js using apt-get
+      run: |
+        curl -sL https://deb.nodesource.com/setup_18.x | bash -
+        apt-get install -y nodejs
+    
+    - name: Verify Node.js installation
+      run: |
+        node -v
+        npm -v
     
     - name: Install dependencies
       run: npm ci
