@@ -33,3 +33,19 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
+
+# OpenClaw configuration files
+AGENTS.md
+SOUL.md
+USER.md
+IDENTITY.md
+HEARTBEAT.md
+TOOLS.md
+*.js
+*.py
+*.ps1
+*.sh
+skills/
+.clawhub/
+.openclaw/
+memory/

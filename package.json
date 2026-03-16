@@ -5,9 +5,9 @@
   "description": "OpenClaw GitHub技能演示仓库",
   "main": "index.js",
   "scripts": {
-    "build": "mkdir -p build && copy src\\index.html build\\index.html",
+    "build": "mkdir -p build && cp -r src/* build/ || true",
     "test": "echo 'Testing project...'; exit 0",
-    "clean": "rmdir /s /q build",
+    "clean": "rm -rf build",
     "dev": "echo 'Development server would start here'; exit 0"
   },
   "keywords": ["openclaw", "demo", "github"],
