@@ -1,0 +1,17 @@
+
+{
+  "name": "openclaw-demo-repo",
+  "version": "1.0.0",
+  "description": "OpenClaw GitHub技能演示仓库",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Building project...'; mkdir -p build && cp -r src/* build/ || true",
+    "test": "echo 'Testing project...'; exit 0",
+    "clean": "rm -rf build"
+  },
+  "keywords": ["openclaw", "demo", "github"],
+  "author": "doyin888",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
